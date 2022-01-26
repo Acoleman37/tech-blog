@@ -26,8 +26,10 @@ router.get("/", (req, res) => {
           plain: true,
         })
       );
+
       res.render("homepage", {
         posts,
+        loggedIn: req.session.loggedIn,
       });
     })
     .catch((err) => {
@@ -71,6 +73,7 @@ router.get("/post/:id", (req, res) => {
 
       res.render("single-post", {
         post,
+        loggedIn: req.session.loggedIn,
       });
     })
     .catch((err) => {
@@ -80,15 +83,25 @@ router.get("/post/:id", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect("/");
-      return;
-    }
-    res.render("login");
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("signup");
 });
 
 router.get("*", (req, res) => {
-  res.redirect("/");
+  res.status(404).send("Can't go there!");
 });
 
 module.exports = router;

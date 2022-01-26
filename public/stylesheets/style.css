@@ -1,8 +1,3 @@
-.post-list {
-    list-style-type: none;
-}
-
-
 * {
     box-sizing: border-box;
 }
@@ -16,19 +11,30 @@ html {
     color: #333;
 }
 
+main,
+.site-name {
+    background-color: #ffffff;
+}
+
+a,
+.btn-no-style,
+#comment-subtitle {
+    color: #ffffff;
+}
+
+a:hover,
+.btn-no-style:hover {
+    color: #0071ce;
+}
+
 a {
     text-decoration: none;
-    color: #000000;
     font-weight: bold;
     transition: color .1s;
 }
 
-a:hover {
-    color: #3486eb;
-}
-
 button {
-    background-color: #225ca3;
+    background-color: #000000;
     border: 0;
     padding: 1%;
     color: white;
@@ -39,19 +45,24 @@ button {
 }
 
 button:hover {
-    background-color: #3486eb;
+    background-color: #0071ce;
 }
 
 .post-list {
     margin: 0;
     padding: 0;
+    list-style-type: none;
+}
+
+.go-back {
+    color: #ff0000;
 }
 
 textarea,
 input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #0071ce;
 }
 
 textarea:focus,
@@ -82,8 +93,45 @@ form label {
     flex-direction: column;
 }
 
+.info-section {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header,
+.site-row,
+.info-section,
+.form-heading {
+    background-color: #000000;
+}
+
+.login-page,
+.sign-in-page,
+.new-form-page,
+.edit-form-page {
+    border: 3px solid #0077ff;
+    padding-bottom: 10px;
+}
+
+.form-heading {
+    padding: 10px;
+}
+
+.info-section,
+.content-section,
+.form-section,
+.sign-in-link,
+.login-link {
+    padding-left: 10px;
+}
+
+.post-name,
+.post-title-section, .new-page {
+    padding-top: 10px;
+}
+
 header {
-    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,6 +140,18 @@ header {
 
 header h1 {
     font-size: 1em;
+}
+
+.site-row {
+    display: flex;
+    border-bottom: 1px solid rgb(0, 4, 255);
+    justify-content: center;
+}
+
+.site-name {
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    border-style: double;
 }
 
 main {
@@ -105,7 +165,6 @@ main {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -114,40 +173,32 @@ main {
 
 .btn-no-style:hover {
     background: none;
-    color: #3486eb;
 }
 
 .delete-post-btn {
-    background-color: #d41414;
+    background-color: #000000;
 }
 
 .delete-post-btn:hover {
-    background-color: #ff643d;
+    background-color: #ff0000;
 }
 
 .post {
     margin-bottom: 2%;
     line-height: 150%;
+    border: 3px solid #0071ce;
 }
 
 .post .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
+    color: #000000;
 }
 
 .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
-}
-
-.upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-    background-color: #1f9c13;
+    color: #000000;
 }
 
 .comment-form {
@@ -177,10 +228,40 @@ main {
     margin-bottom: 5%;
 }
 
-footer {
-    border-top: 1px solid #ccc;
+#comment-subtitle {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.new-post-section {
     display: flex;
     justify-content: center;
-    padding: 1%;
-    font-size: 110%;
+}
+
+#create-new-post {
+    width: 15%;
+}
+
+.sign-in-link,
+.login-link {
+    color: #2c2307;
+}
+
+.form-heading h1,
+.form-heading h2 {
+    color: #000000;
+}
+
+.login-form,
+.signup-form,
+.post-content,
+.post-title-section {
+    padding: 10px 10px 0px 0px;
+}
+
+.entry-field,
+.login-signup-btn,
+.btn,
+#post-title {
+    width: 100%;
 }
