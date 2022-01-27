@@ -8,11 +8,11 @@ router.get("/", (req, res) => {
       exclude: ["password"],
     },
   })
-    .then((dbUserData) => res.json(dbUserData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then((dbUserData) => res.json(dbUserData))
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 // Get specific user
